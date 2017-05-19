@@ -2,7 +2,8 @@
  * Created by hekk on 2017/5/19.
  */
 import React, {Component} from 'react';
-import classNames from  'classnames';
+import Menu from './Menu';
+import '../less/menus.less';
 const MenusData = [{
   title: '工程研发部门',
   total: 123,
@@ -24,10 +25,37 @@ const MenusData = [{
 }];
 
 class Menus extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isClear: false
+    };
+
+  }
+
+  clearAll() {
+    this.setState({
+      isClear: true
+    })
+  }
+
   render() {
+    let {isClear} = this.state;
     return (
             <div className="menus">
-              menus
+              <div className="title" data-flex="main:justify">
+                <span className="main-title">招聘职位</span>
+                <span className="clear" onClick={() => {
+                  this.clearAll()
+                }}>清空</span>
+              </div>
+              {
+                MenusData.map((menu, index) => {
+                  return <Menu menu={menu} key={index} isClear={isClear}/>
+                })
+              }
+
 
             </div>
     );
