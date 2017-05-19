@@ -72,7 +72,7 @@ let config = {
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function () {
-          return [precss, autoprefixer({browsers: ['last 4 versions', 'iOS 7']})];
+          return [precss, autoprefixer({browsers: ['last 2 versions', 'iOS 7']})];
         }
       }
     }),

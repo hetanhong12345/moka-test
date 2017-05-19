@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
-import '../less/App.less';
+import 'flex.css/dist/data-flex.css';
+import '../less/app.less';
 import Menus from '../components/Menus';
 
 class App extends Component {
   render() {
     return (
-            <div className="App">
+            <div className="warp" data-flex="dir:left">
 
-              <Menus></Menus>
+              <Menus data-flex-box="0"></Menus>
+              <div className="right-content" data-flex-box="1">
+                right content
+              </div>
             </div>
     );
   }
