@@ -12,4 +12,4 @@ npm install
 webpack && node server.js
 
 ```
-* 访问[localhost:3100/](localhost:3100/)
+* [localhost:3100](http://localhost:3100/)
